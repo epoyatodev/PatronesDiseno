@@ -33,7 +33,9 @@ class HeroeListTableViewController: UIViewController {
         
         SetUpUpdateUI()
         getData()
-        setUpTableDelegate()        
+        setUpTableDelegate()
+        mainView.loginButton.addTarget(self, action: #selector(loginPresent), for: .touchUpInside)
+
     }
     
     func SetUpUpdateUI() {
@@ -65,7 +67,16 @@ class HeroeListTableViewController: UIViewController {
             
             
         }
+        
     }
+
+    
+    @objc
+    func loginPresent() {
+        let loginController = LoginViewController(nibName: nil, bundle: nil)
+        self.present(loginController, animated: true)
+    }
+
 
     
 

@@ -47,7 +47,6 @@ class HeroeListView: UIView {
         super.init(frame: frame)
         // CREATE / ADD SUBVIEWS
         setUpViews()
-        loginButton.addTarget(self, action: #selector(openWindowLogin), for: .touchUpInside)
         
     }
     
@@ -57,6 +56,7 @@ class HeroeListView: UIView {
     
     
     func setUpViews() {
+
         backgroundColor = .white
         
         addSubview(loginButton)
@@ -82,9 +82,7 @@ class HeroeListView: UIView {
         
       
     }
-    @objc func openWindowLogin() {
-        UIApplication.shared.connectedScenes.compactMap{ ($0 as? UIWindowScene)?.keyWindow }.first?.rootViewController = LoginViewController()
-    }
+ 
     
 }
 
